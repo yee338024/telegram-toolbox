@@ -1,23 +1,23 @@
-# Telegram Hunter
+# Telegram Toolbox
 
 <div align="center">
 <img src="docs/screenshot/logo.png" style="width:50px"/>
 </div>
 
-**Telegram Hunter** 是一款监听工具，帮助你在 Telegram 上捕捉潜在客户。
+**Telegram Toolbox** 是一款监听工具，帮助你在 Telegram 上捕捉潜在客户。
 它会监听群组和频道消息，检测你添加的**关键词**，并即时通知你，让你更容易发现和联系新线索。
 
 ## 🚀 主要功能
 
 #### 消息监听
 自定义关键词，系统自动扫描 Telegram 消息。
-![Telegram Hunter 截图](docs/screenshot/telegram-hunter.png)
+![Telegram Toolbox 截图](docs/screenshot/telegram-toolbox.png)
 
 ### 消息转发
 
 自动将重要消息转发到指定的聊天或群组。
 
-![Telegram Hunter Screenshot](docs/screenshot/alert.png)
+![Telegram Toolbox Screenshot](docs/screenshot/alert.png)
 
 
 ### 群组采集

@@ -1,10 +1,10 @@
-# Telegram Hunter
+# Telegram Toolbox
 
 <div align="center">
 <img src="docs/screenshot/logo.png" style="width:50px"/>
 </div>
 
-**Telegram Hunter** is a smart tool that helps you capture potential customers on Telegram.  
+**Telegram Toolbox** is a smart tool that helps you capture potential customers on Telegram.  
 It listens to group and channel messages, detects **keywords** you care about, and notifies you instantly — making it
 easier to discover and connect with new leads.
 
@@ -23,11 +23,11 @@ easier to discover and connect with new leads.
 ### Keyword Monitor  
 
 Define custom keywords and let the system automatically scan Telegram messages.
-![Telegram Hunter Screenshot](docs/screenshot/telegram-hunter.png)
+![Telegram Toolbox Screenshot](docs/screenshot/telegram-toolbox.png)
 
 ### Message Forwarding  
 Forward important messages to your designated chat or group automatically.
-![Telegram Hunter Screenshot](docs/screenshot/alert.png)
+![Telegram Toolbox Screenshot](docs/screenshot/alert.png)
 
 ### Group & Channel Finder  
 Automatically collects Group & Channel information from user messages or profiles, making it easier to discover,

@@ -3,18 +3,18 @@
 layout: home
 
 hero:
-  name: "Telegram Hunter"
+  name: "Telegram Toolbox"
   text: "Helps you capture potential customers on Telegram."
   image:
     src: /logo.png
-    alt: "Telegram Hunter"
+    alt: "Telegram Toolbox"
   actions:
     - theme: brand
       text: Guide
       link: /guide
     - theme: alt
       text: Download
-      link: "https://github.com/yee338024/telegram-hunter/releases/download/1.0.3/telegram-hunter-1.0.3-win-x64.exe"
+      link: "https://github.com/yee338024/telegram-toolbox/releases/download/1.0.3/telegram-toolbox-1.0.3-win-x64.exe"
 
 features:
   - title: 🎯Keyword Monitoring

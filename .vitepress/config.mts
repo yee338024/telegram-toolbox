@@ -4,7 +4,7 @@ import {defineConfig} from 'vitepress'
 export default defineConfig({
     srcDir: 'docs',
     head: [
-        ['link', {rel: 'icon', href: '/hunter/favicon.ico'}],
+        ['link', {rel: 'icon', href: '/favicon.ico'}],
         ['meta', {
             name: 'keywords',
             content:
@@ -12,12 +12,11 @@ export default defineConfig({
         }],
         ['meta', {name: 'author', content: 'Yee'}],
         ['meta', {name: 'robots', content: 'index, follow'}],
-        ['link', {rel: 'alternate', hreflang: 'en', href: 'https://facai365.vip/hunter/'}],
-        ['link', {rel: 'alternate', hreflang: 'zh', href: 'https://facai365.vip/hunter/zh/'}],
+        ['link', {rel: 'alternate', hreflang: 'en', href: 'https://tgtoolbox.com/'}],
+        ['link', {rel: 'alternate', hreflang: 'zh', href: 'https://tgtoolbox.com/zh/'}],
     ],
-    base: '/hunter',
-    title: "Telegram Hunter",
-    description: "Telegram Hunter is a smart tool that helps you capture potential customers on Telegram.",
+    title: "Telegram Toolbox",
+    description: "Telegram Toolbox is a smart tool that helps you capture potential customers on Telegram.",
     locales: {
         root: {
             label: 'English',
@@ -33,7 +32,9 @@ export default defineConfig({
                     {text: '@jenkins_pro', link: 'https://t.me/jenkins_pro'}
                 ],
                 sidebar: [
-                    {text: '使用教程', link: '/zh/guide'}
+                    {text: '简介及安装', link: '/zh/guide'},
+                    {text: '监听消息', link: '/zh/listener'},
+                    {text: '群组采集', link: '/zh/channel_finder'}
                 ],
             }
         },
@@ -46,10 +47,12 @@ export default defineConfig({
         ],
         sidebar: [
             {text: 'Guide', link: '/guide'},
+            {text: 'Listener', link: '/listener'},
+            {text: 'Channel & Group Finder', link: '/channel_finder'}
         ],
         socialLinks: [
             {icon: 'telegram', link: 'https://t.me/jenkins_pro'},
-            {icon: 'github', link: 'https://github.com/yee338024/telegram-hunter'}
+            {icon: 'github', link: 'https://github.com/yee338024/telegram-toolbox'}
         ]
     }
 })

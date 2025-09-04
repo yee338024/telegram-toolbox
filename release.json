@@ -2,7 +2,7 @@
   "fileMap": [
     {
       "src": "./.vitepress/dist/",
-      "dest": "/www/wwwroot/facai365.vip/hunter/"
+      "dest": "/www/wwwroot/tgtoolbox.com/"
     }
   ],
   "ftpConfig": {

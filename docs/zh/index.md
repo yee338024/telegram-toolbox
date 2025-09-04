@@ -3,18 +3,18 @@
 layout: home
 
 hero:
-  name: "Telegram Hunter"
+  name: "Telegram Toolbox"
   text: "帮助你在 Telegram 上捕获潜在客户。"
   image:
     src: "/logo.png"
-    alt: "Telegram Hunter"
+    alt: "Telegram Toolbox"
   actions:
     - theme: brand
       text: 使用教程
       link: /zh/guide
     - theme: alt
       text: 下载
-      link: "https://github.com/yee338024/telegram-hunter/releases/download/1.0.3/telegram-hunter-1.0.3-win-x64.exe"
+      link: "https://github.com/yee338024/telegram-toolbox/releases/download/1.0.3/telegram-toolbox-1.0.3-win-x64.exe"
 
 features:
   - title: 🎯关键词监控
