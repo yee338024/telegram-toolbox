@@ -17,6 +17,13 @@ export default defineConfig({
         ['meta', {name: 'baidu-site-verification', content: 'codeva-w6NaJGChtA'}],
         ['link', {rel: 'alternate', hreflang: 'en', href: 'https://tgtoolbox.com/'}],
         ['link', {rel: 'alternate', hreflang: 'zh', href: 'https://tgtoolbox.com/zh/'}],
+        ['script', {}, `var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?95b841b21326feb52abf9132934c4e72";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();`]
     ],
     title: "Telegram Toolbox",
     description: "Telegram Toolbox is a smart tool that helps you capture potential customers on Telegram.",
