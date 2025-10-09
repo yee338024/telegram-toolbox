@@ -13,6 +13,10 @@ easier to discover and connect with new leads.
 <img src="https://img.shields.io/badge/%E4%B8%AD%E6%96%87%E7%89%88-e71b24?&color=e71b24&sanitize=true" alt="Chat"/>
 </a>
 
+<a href="./readme_zh.md" target="_blank">
+<img src="https://img.shields.io/badge/Русский-e71b24?&color=0039a6&sanitize=true" alt="Chat"/>
+</a>
+
 <a href="https://t.me/jenkins_pro" target="_blank">
 <img src="https://img.shields.io/badge/%40jenkins__pro-25a4e3?logo=telegram&logoColor=white&sanitize=true" alt="Chat"/>
 </a>

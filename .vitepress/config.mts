@@ -11,7 +11,7 @@ export default defineConfig({
         ['meta', {
             name: 'keywords',
             content:
-                'tgbot, 飞机机器人, telegram bot,telegram customer acquisition, tg customer acquisition, telegram keyword monitoring, tg keyword monitoring, telegram keyword alert, tg keyword alert, telegram group scraper, tg group scraper, telegram channel monitoring, tg channel monitoring, telegram leads capture, tg leads capture, telegram marketing tool, tg marketing tool, telegram automation bot, tg automation bot, telegram 2-way bot, tg 2-way bot, 电报引流工具, 飞机引流工具, tg引流工具, 电报关键词监控, 飞机关键词监控, tg关键词监控,关键词监听, 电报群采集, 飞机群采集, tg群采集, 电报频道监听, 飞机频道监听, tg频道监听, 电报获客机器人, 飞机获客机器人, tg获客机器人, 电报营销工具, 飞机营销工具, tg营销工具, 电报关键词实时监控工具, 飞机关键词监听机器人, tg引流获客自动化工具, 电报客户获取与营销机器人, telegram tg channel & group monitoring bot, best tg telegram marketing automation tool'
+                'tgbot, телеграм,channelfinderbot,飞机机器人,telegram toolbox, telegram bot,telegram customer acquisition, tg customer acquisition, telegram keyword monitoring, tg keyword monitoring, telegram keyword alert, tg keyword alert, telegram group scraper, tg group scraper, telegram channel monitoring, tg channel monitoring, telegram leads capture, tg leads capture, telegram marketing tool, tg marketing tool, telegram automation bot, tg automation bot, telegram 2-way bot, tg 2-way bot, 电报引流工具, 飞机引流工具, tg引流工具, 电报关键词监控, 飞机关键词监控, tg关键词监控,关键词监听, 电报群采集, 飞机群采集, tg群采集, 电报频道监听, 飞机频道监听, tg频道监听, 电报获客机器人, 飞机获客机器人, tg获客机器人, 电报营销工具, 飞机营销工具, tg营销工具, 电报关键词实时监控工具, 飞机关键词监听机器人, tg引流获客自动化工具, 电报客户获取与营销机器人, telegram tg channel & group monitoring bot, best tg telegram marketing automation tool'
         }],
         ['meta', {name: 'author', content: 'Yee'}],
         ['meta', {name: 'baidu-site-verification', content: 'codeva-w6NaJGChtA'}],
@@ -48,6 +48,22 @@ export default defineConfig({
                 ],
             }
         },
+        ru:{
+            label: 'Русский',
+            lang: 'ru',
+            themeConfig: {
+                nav: [
+                    {text: 'Главная', link: '/ru/'},
+                    {text: 'Руководство', link: '/ru/guide'},
+                    {text: '@jenkins_pro', link: 'https://t.me/jenkins_pro'}
+                ],
+                sidebar: [
+                    {text: 'Руководство', link: '/ru/guide'},
+                    {text: 'Слушатель', link: '/ru/listener'},
+                    {text: 'Поиск каналов и групп', link: '/ru/channel_finder'}
+                ],
+            }
+        }
     },
     themeConfig: {
         nav: [
