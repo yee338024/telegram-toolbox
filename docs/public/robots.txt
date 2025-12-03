@@ -1,5 +1,3 @@
 User-agent: *
-Allow: /
-Allow: /assets/
-Allow: /zh/
+Disallow:
 Sitemap: https://tgtoolbox.com/sitemap.xml

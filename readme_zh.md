@@ -7,6 +7,10 @@
 **Telegram Toolbox** 是一款监听工具，帮助你在 Telegram 上捕捉潜在客户。
 它会监听群组和频道消息，检测你添加的**关键词**，并即时通知你，让你更容易发现和联系新线索。
 
+## ⬇️ 下载安装
+从 [Releases](https://github.com/yee338024/telegram-toolbox/releases) 页面下载最新版本
+
+
 ## 🚀 主要功能
 
 #### 消息监听

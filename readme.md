@@ -4,7 +4,11 @@
 <img src="docs/screenshot/logo.png" style="width:50px"/>
 </div>
 
-**Telegram Toolbox** is a smart tool that helps you capture potential customers on Telegram.  
+**Telegram Toolbox** 是一款`免费`的监听工具，帮助你在 Telegram 上捕捉潜在客户。
+它会监听群组和频道消息，检测你添加的**关键词**，并即时通知你，让你更容易发现和联系新线索。
+
+
+**Telegram Toolbox** is a smart & free tool that helps you capture potential customers on Telegram.  
 It listens to group and channel messages, detects **keywords** you care about, and notifies you instantly — making it
 easier to discover and connect with new leads.
 
@@ -21,6 +25,9 @@ easier to discover and connect with new leads.
 <img src="https://img.shields.io/badge/%40jenkins__pro-25a4e3?logo=telegram&logoColor=white&sanitize=true" alt="Chat"/>
 </a>
 </p>
+
+## ⬇️ Installation
+Download the latest release from the [Releases](https://github.com/yee338024/telegram-toolbox/releases)
 
 ## 🚀 Key Features  
 
