@@ -38,7 +38,7 @@ jobs:
         id: deployment
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .vitepress/dist/
+          path: telegram-toolbox-docs/.vitepress/dist/
 
   deploy:
     environment:
