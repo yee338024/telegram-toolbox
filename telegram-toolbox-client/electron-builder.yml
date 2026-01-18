@@ -33,7 +33,7 @@ nsis:
   installerIcon: icon.ico
   installerHeaderIcon: icon.ico
   uninstallerIcon: icon.ico
-  shortcutName: 'TG Hunter'
+  shortcutName: 'Telegram Toolbox'
   createDesktopShortcut: true
   createStartMenuShortcut: false
 

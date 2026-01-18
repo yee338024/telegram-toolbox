@@ -19,6 +19,9 @@ cmake-build-*/
 *.iws
 out/
 dist/
+_td_database/
+_td_files/
+VC_redist.x64.exe
 node_modules/
 .idea_modules/
 atlassian-ide-plugin.xml

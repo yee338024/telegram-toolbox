@@ -3,8 +3,9 @@ import {defineConfig} from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     sitemap:{
-        hostname: 'https://tgtoolbox.com'
+        hostname: 'https://yee338024.github.com'
     },
+    base: '/telegram-toolbox/',
     srcDir: 'docs',
     head: [
         ['link', {rel: 'icon', href: '/favicon.ico'}],
