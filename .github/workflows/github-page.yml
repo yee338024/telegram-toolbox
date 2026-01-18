@@ -33,7 +33,7 @@ jobs:
           pnpm install --verbose
       - name: Build static files
         id: build
-        run: pnpm run build
+        run: pnpm run docs:build
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3
