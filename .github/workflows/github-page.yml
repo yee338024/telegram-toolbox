@@ -38,7 +38,7 @@ jobs:
         id: deployment
         uses: actions/upload-pages-artifact@v3
         with:
-          path: telegram-toolbox-docs/dist/
+          path: dist/
 
   deploy:
     environment:
