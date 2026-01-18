@@ -1,0 +1,39 @@
+appId: 'com.wisdom.telegram.toolbox'
+productName: 'Telegram Toolbox'
+executableName: 'tg-toolbox'
+copyright: 'Copyright © 2025 @jenkins_pro LLC'
+asar: false
+npmRebuild: false
+directories:
+  app: 'dist/out'
+  output: 'dist'
+  buildResources: 'build'
+files:
+  - '**/**'
+  - '*'
+  - "!**/**/*.ts"
+  - "!**/**/*.js.map"
+  - "!**/**/*.mjs.map"
+  - "!node_modules/@schoolyun/**/src/**"
+  - "!package.json"
+win:
+  artifactName: telegram-toolbox-${version}-${os}-${arch}.${ext}
+  electronUpdaterCompatibility: '>=2.16.0'
+  target:
+    - target: nsis
+      arch:
+        - x64
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  language: "2052"
+  differentialPackage: false
+  installerIcon: icon.ico
+  installerHeaderIcon: icon.ico
+  uninstallerIcon: icon.ico
+  shortcutName: 'TG Hunter'
+  createDesktopShortcut: true
+  createStartMenuShortcut: false
+

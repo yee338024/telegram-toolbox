@@ -1,0 +1,11 @@
+{
+  "fileMap": [
+    {
+      "src": "./dist/",
+      "dest": "/www/wwwroot/facai365.vip/telectron/"
+    }
+  ],
+  "ftpConfig": {
+    "host": ["itime-global"]
+  }
+}

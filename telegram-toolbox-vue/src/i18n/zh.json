@@ -1,0 +1,163 @@
+{
+  "settings": {
+    "title": "设置",
+    "language": "语言",
+    "theme": "主题",
+    "notifications": "通知",
+    "privacy": "隐私",
+    "security": "安全",
+    "account": "账户",
+    "help": "帮助与支持",
+    "saveChanges": "保存更改",
+    "cancel": "取消",
+    "activeTitle": "软件激活",
+    "activeCode": "激活码",
+    "activeCodePlaceholder": "请输入激活码",
+    "active": "激活",
+    "reactive": "重新激活",
+    "activeStatus": "激活状态",
+    "activated": "已激活",
+    "unactivated": "未激活",
+    "expireTime": "过期时间",
+    "otherTitle": "其他设置",
+    "groupDailyFetchCount": "每日群组采集数量",
+    "languageZh": "中文",
+    "languageEn": "English"
+  },
+  "message": {
+    "title": "消息监听",
+    "clear": "清空信息",
+    "manage": "监听管理",
+    "excludeChats": "排除聊天",
+    "listenCondition": "监听条件",
+    "add": "新增",
+    "selectChat": "请选择聊天",
+    "listenDialog": {
+      "title": "消息监听",
+      "type": "类型",
+      "regex": "正则",
+      "exact": "全文",
+      "fuzzy": "包含",
+      "pattern": "内容",
+      "patternPlaceholder": "请输入匹配内容",
+      "exclude": "排除",
+      "cancel": "取消",
+      "confirm": "确定",
+      "notify": "提醒",
+      "forward": "转发"
+    },
+    "alertKeyword": "关键词",
+    "alertFromGroup": "来源群组",
+    "alertFromChat": "聊天室",
+    "alertSender": "发送人",
+    "alertGroupLink": "群组链接",
+    "alertTime": "时间",
+    "alertOriginalMsg": "原始消息",
+    "alertNotifyTitle": "消息监听"
+  },
+  "common": {
+    "activeTip": "请先激活软件",
+    "logout": "退出登录",
+    "copy": "复制",
+    "joinGroup": "加入群组"
+  },
+  "proxy": {
+    "title": "代理设置",
+    "type": "代理类型",
+    "selectType": "请选择类型",
+    "server": "服务器",
+    "serverPlaceholder": "服务器地址：120.xxx.xxx.xxx",
+    "port": "端口",
+    "username": "用户名",
+    "password": "密码",
+    "secret": "MTProto Secret",
+    "httpOnly": "仅HTTP",
+    "enable": "启用",
+    "save": "保存",
+    "cancel": "取消",
+    "serverOrPortEmpty": "服务器或端口不能为空",
+    "portInvalid": "端口必须是1-65535之间的数字",
+    "secretEmpty": "MTProto Secret不能为空",
+    "updated": "代理已更新"
+  },
+  "group": {
+    "title": "群组信息",
+    "empty": "暂无群组信息",
+    "sendTest": "发送测试消息",
+    "basic": "基础群组",
+    "super": "超级群组"
+  },
+  "login": {
+    "title": "登录账号",
+    "apiId": "API ID",
+    "apiIdPlaceholder": "请输入 API ID",
+    "apiHash": "API Hash",
+    "apiHashPlaceholder": "请输入 API Hash",
+    "phone": "电话号码",
+    "phonePlaceholder": "请输入电话号码（带区号）",
+    "code": "验证码",
+    "codePlaceholder": "请输入Telegram验证码，非短信验证码",
+    "loginBtn": "登 录",
+    "proxySetting": "代理设置",
+    "apiIdEmpty": "API ID 不能为空",
+    "apiHashEmpty": "API Hash 不能为空",
+    "phoneEmpty": "手机号不能为空",
+    "codeTip": "请查收验证代码",
+    "loginFailed": "登录失败，请检查输入信息",
+    "guideBtn": "申请教程",
+    "sendBtn": "发送"
+  },
+  "chat": {
+    "title": "聊天",
+    "empty": "暂无聊天信息",
+    "idLabel": "ID：",
+    "all": "全部",
+    "type": "类型"
+  },
+  "groupTag": "群",
+  "chatFinder": {
+    "searchPlaceholder": "关键词搜索",
+    "copyLink": "复制链接",
+    "copySuccess": "已复制链接到剪贴板",
+    "title": "群组采集",
+    "blockTip": "请求次数过多，{blockSeconds}秒后解封",
+    "alert1": "开启群组采集后，会自动解析消息里的群组链接，并显示在列表中。",
+    "alert2": "一个账号一天只能采集200个群组，超过后，会被telegram禁用群组链接24小时",
+    "enableCollect": "开启采集"
+  },
+  "chatTypePrivate": "私聊",
+  "chatTypeBasicGroup": "普通群",
+  "chatTypeSupergroup": "频道",
+  "chatTypeSecret": "私密聊天",
+  "superGroup": {
+    "exportHeaders": {
+      "nickname": "昵称",
+      "id": "ID",
+      "username": "用户名",
+      "userType": "用户类型",
+      "onlineStatus": "是否在线",
+      "premium": "Premium"
+    },
+    "userType": {
+      "normal": "正常用户",
+      "bot": "机器人",
+      "deleted": "已删除用户",
+      "unknown": "未知用户"
+    },
+    "onlineStatus": {
+      "online": "在线",
+      "offline": "离线",
+      "unknown": "未知"
+    },
+    "premium": {
+      "yes": "是",
+      "no": "否"
+    },
+    "exportTrialTip": "试用版仅导出50个用户",
+    "exportFailed": "导出失败: {error}",
+    "hiddenMembers": "已隐藏成员",
+    "viewMembers": "查看成员",
+    "exportExcel": "导出Excel",
+    "memberList": "成员列表"
+  }
+}

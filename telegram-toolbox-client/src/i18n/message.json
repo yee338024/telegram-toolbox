@@ -1,0 +1,44 @@
+{
+  "zh": {
+    "tray": {
+      "setting": "设置",
+      "language": {
+        "title": "语言",
+        "zh": "中文",
+        "en": "英文"
+      },
+      "exit": "退出",
+      "startup": "开机启动",
+      "about": "关于",
+      "copyLink": "复制链接",
+      "copy": "复制",
+      "saveImage": "保存图片",
+      "copyImage": "复制图片",
+      "paste": "粘贴",
+      "cut": "剪切",
+      "inspect": "检查元素",
+      "reload": "刷新"
+    }
+  },
+  "en": {
+    "tray": {
+      "setting": "Settings",
+      "language": {
+        "title":"Language",
+        "zh": "Chinese",
+        "en": "English"
+      },
+      "exit": "Exit",
+      "startup": "Startup",
+      "about": "About",
+      "copyLink": "Copy Link",
+      "copy": "Copy",
+      "saveImage": "Save Image",
+      "copyImage": "Copy Image",
+      "paste": "Paste",
+      "cut": "Cut",
+      "inspect": "Inspect Element",
+      "reload": "Reload"
+    }
+  }
+}

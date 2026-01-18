@@ -1,0 +1,163 @@
+{
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "notifications": "Notifications",
+    "privacy": "Privacy",
+    "security": "Security",
+    "account": "Account",
+    "help": "Help & Support",
+    "saveChanges": "Save Changes",
+    "cancel": "Cancel",
+    "activeTitle": "Activation",
+    "activeCode": "License",
+    "activeCodePlaceholder": "Please enter activation code",
+    "active": "Activate",
+    "reactive": "Reactivate",
+    "activeStatus": "Status",
+    "activated": "Activated",
+    "unactivated": "Not Activated",
+    "expireTime": "Expiration",
+    "otherTitle": "Other Settings",
+    "groupDailyFetchCount": "Daily group fetch count",
+    "languageZh": "中文",
+    "languageEn": "English"
+  },
+  "message": {
+    "title": "Message Listener",
+    "clear": "Clear Messages",
+    "manage": "Manage Listener",
+    "excludeChats": "Exclude Chats",
+    "listenCondition": "Listen Condition",
+    "add": "Add",
+    "selectChat": "Select chat",
+    "listenDialog": {
+      "title": "Message Listener",
+      "type": "Type",
+      "regex": "Regex",
+      "exact": "Exact",
+      "fuzzy": "Fuzzy",
+      "pattern": "Pattern",
+      "patternPlaceholder": "Please enter match content",
+      "exclude": "Exclude",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "notify": "Notify",
+      "forward": "Forward"
+    },
+    "alertKeyword": "Keyword",
+    "alertFromGroup": "Group",
+    "alertFromChat": "Chat",
+    "alertSender": "Sender",
+    "alertGroupLink": "Link",
+    "alertTime": "Time",
+    "alertOriginalMsg": "Original Message",
+    "alertNotifyTitle": "Message Listener"
+  },
+  "common": {
+    "activeTip": "Please activate the software first",
+    "logout": "Logout",
+    "copy": "Copy",
+    "joinGroup": "Join Group"
+  },
+  "proxy": {
+    "title": "Proxy Settings",
+    "type": "Proxy Type",
+    "selectType": "Select type",
+    "server": "Server",
+    "serverPlaceholder": "Server address: 120.xxx.xxx.xxx",
+    "port": "Port",
+    "username": "Username",
+    "password": "Password",
+    "secret": "Secret",
+    "httpOnly": "HTTP Only",
+    "enable": "Enable",
+    "save": "Save",
+    "cancel": "Cancel",
+    "serverOrPortEmpty": "Server or port cannot be empty",
+    "portInvalid": "Port must be a number between 1 and 65535",
+    "secretEmpty": "MTProto Secret cannot be empty",
+    "updated": "Proxy updated"
+  },
+  "group": {
+    "title": "Group Info",
+    "empty": "No group information",
+    "sendTest": "Send test message",
+    "basic": "Basic Groups",
+    "super": "Super Groups"
+  },
+  "login": {
+    "title": "Login Account",
+    "apiId": "API ID",
+    "apiIdPlaceholder": "Please enter API ID",
+    "apiHash": "API Hash",
+    "apiHashPlaceholder": "Please enter API Hash",
+    "phone": "Phone",
+    "phonePlaceholder": "Please enter phone number",
+    "code": "Code",
+    "codePlaceholder": "Please enter login code from Telegram",
+    "loginBtn": "Login",
+    "proxySetting": "Proxy Settings",
+    "apiIdEmpty": "API ID cannot be empty",
+    "apiHashEmpty": "API Hash cannot be empty",
+    "phoneEmpty": "Phone number cannot be empty",
+    "codeTip": "Please check the verification code",
+    "loginFailed": "Login failed, please check your input",
+    "guideBtn": "Guide",
+    "sendBtn": "Send"
+  },
+  "chat": {
+    "title": "Chat",
+    "empty": "No chat information",
+    "idLabel": "ID:",
+    "all": "All Chats",
+    "type": "Type"
+  },
+  "groupTag": "Group",
+  "chatFinder": {
+    "searchPlaceholder": "Keyword search",
+    "copyLink": "Copy Link",
+    "copySuccess": "Link copied to clipboard",
+    "title": "Channel Finder",
+    "blockTip": "Too many requests, unblocked after {blockSeconds} seconds",
+    "alert1": "After enabling channel finder, channel links in messages will be parsed and displayed in the list.",
+    "alert2": "Each account can only collect 200 channel per day. If exceeded, Telegram will disable channel links for 24 hours.",
+    "enableCollect": "Enable"
+  },
+  "chatTypePrivate": "Private Chat",
+  "chatTypeBasicGroup": "Basic Group",
+  "chatTypeSupergroup": "Channel",
+  "chatTypeSecret": "Secret Chat",
+  "superGroup": {
+    "exportHeaders": {
+      "nickname": "Nickname",
+      "id": "ID",
+      "username": "Username",
+      "userType": "User Type",
+      "onlineStatus": "Online Status",
+      "premium": "Premium"
+    },
+    "userType": {
+      "normal": "Normal User",
+      "bot": "Bot",
+      "deleted": "Deleted User",
+      "unknown": "Unknown User"
+    },
+    "onlineStatus": {
+      "online": "Online",
+      "offline": "Offline",
+      "unknown": "Unknown"
+    },
+    "premium": {
+      "yes": "Yes",
+      "no": "No"
+    },
+    "exportTrialTip": "Trial version only exports 50 users",
+    "exportFailed": "Export failed: {error}",
+    "hiddenMembers": "Hidden Members",
+    "viewMembers": "View Members",
+    "exportExcel": "Export Excel",
+    "memberList": "Member List"
+  }
+}
