@@ -22,12 +22,12 @@ const avatar = computed(() => {
 </script>
 
 <template>
-  <nut-cell>
+  <el-card shadow="hover">
     <div class="flex gap-2 w-full items-center">
-      <nut-avatar>
+      <el-avatar>
         <img v-if="avatar" :src="avatar" alt="User Avatar">
         <User v-else size="24" />
-      </nut-avatar>
+      </el-avatar>
       <div class="flex flex-col w-full ">
         <div>{{ user.nickName }}</div>
         <div class="flex items-center gap-1 cursor-pointer">
@@ -38,7 +38,7 @@ const avatar = computed(() => {
       <!--        发送测试消息 -->
       <!--      </nut-button> -->
     </div>
-  </nut-cell>
+  </el-card>
 </template>
 
 <style scoped>

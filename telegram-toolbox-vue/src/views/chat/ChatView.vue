@@ -30,7 +30,7 @@ const filteredChats = computed(() => {
       </el-select>
     </el-form-item>
     <div v-if="filteredChats.length === 0" class="empty-tip">
-      <nut-empty :description="t('chat.empty')" />
+      <el-empty :description="t('chat.empty')" />
     </div>
     <template v-else>
       <div class="flex flex-col gap-2">

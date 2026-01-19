@@ -31,16 +31,6 @@ const router = createRouter({
           },
         },
         {
-          path: '/group',
-          name: 'group',
-          component: () => import('../views/group/GroupView.vue'),
-          meta: {
-            title: 'group.title',
-            icon: 'every-user',
-            tab: false,
-          },
-        },
-        {
           path: '/message',
           name: 'message',
           component: () => import('../views/message/MessageView.vue'),

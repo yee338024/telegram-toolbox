@@ -7,7 +7,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    BottomTab: typeof import('./src/components/BottomTab.vue')['default']
     ChatSelector: typeof import('./src/components/ChatSelector.vue')['default']
     ElAlert: typeof import('element-plus/es')['ElAlert']
     ElButton: typeof import('element-plus/es')['ElButton']

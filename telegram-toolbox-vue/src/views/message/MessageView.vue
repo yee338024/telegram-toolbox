@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useStorage } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -13,14 +14,16 @@ const messageStore = useMessageStore()
 const { messages, listenList, listenMessage } = storeToRefs(messageStore)
 const showDrawer = ref(false)
 const { t } = useI18n()
-
+const page = ref(1)
+const pageSize = useStorage('messagePageSize', 30)
+const pagedMessages = computed(() => {
+  const start = (page.value - 1) * pageSize.value
+  const end = start + pageSize.value
+  return messages.value.slice(start, end)
+})
 function clearMsg() {
   messageStore.clear()
 }
-
-const msgList = computed(() => {
-  return listenList.value.length > 0 ? listenMessage.value : messages.value
-})
 </script>
 
 <template>
@@ -39,11 +42,17 @@ const msgList = computed(() => {
         </el-button>
       </div>
     </div>
-    <el-card v-for="(msg, index) in msgList" :key="msg.id" shadow="hover">
-      <template #default>
-        <MessageItem :msg="msg" />
-      </template>
+    <el-card v-for="(msg, index) in pagedMessages" :key="msg.id" shadow="hover">
+      <MessageItem :msg="msg" />
     </el-card>
+    <el-pagination
+      v-model:current-page="page"
+      v-model:page-size="pageSize"
+      class="mt-4"
+      :total="messages.length"
+      :page-sizes="[10, 30, 50, 100]"
+      layout="total, sizes, prev, pager, next, jumper"
+    />
     <ListenDrawer v-model="showDrawer" />
   </div>
 </template>
