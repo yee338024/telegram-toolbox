@@ -27,14 +27,14 @@ function onLanguageChange(val: 'en' | 'zh') {
       </div>
       <el-card shadow="hover">
         <el-form label-width="130" label-position="top">
-          <el-form-item :label="t('settings.groupDailyFetchCount')">
-            <el-input-number v-model="groupDailyFetchCount" :min="0" :max="1000" />
-          </el-form-item>
           <el-form-item :label="t('settings.language')">
             <el-select v-model="language" style="width: 120px" @change="onLanguageChange">
               <el-option :label="t('settings.languageZh')" value="zh" />
               <el-option :label="t('settings.languageEn')" value="en" />
             </el-select>
+          </el-form-item>
+          <el-form-item :label="t('settings.groupDailyFetchCount')">
+            <el-input-number v-model="groupDailyFetchCount" :min="0" :max="1000" />
           </el-form-item>
         </el-form>
       </el-card>

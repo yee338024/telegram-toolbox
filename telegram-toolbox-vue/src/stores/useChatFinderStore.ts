@@ -6,11 +6,12 @@ import type { chat, Message } from '@/tdlib-types.ts'
 import { useIntervalFn, useStorage, useTimeoutPoll } from '@vueuse/core'
 import { delay } from '@widget-js/core'
 import consola from 'consola'
-import { defineStore } from 'pinia'
+import { defineStore, storeToRefs } from 'pinia'
 import { ref } from 'vue'
 import {
   ChatFinderRepository,
 } from '@/data/repository/ChatFinderRepository.ts'
+import { useSettingsStore } from '@/stores/useSettingsStore.ts'
 import { useTDStore } from '@/stores/useTDStore.ts'
 import { MessageUtils } from '@/utils/MessageUtils.ts'
 import { TelegramUtils } from '@/utils/TelegramUtils.ts'
@@ -22,12 +23,34 @@ export const useChatFinderStore = defineStore('chat-finder', () => {
   const blockTime = useStorage('block_time', 0)
   const blockUntil = useStorage('block_until', 0)
   const enable = useStorage('Aj4xievopoox', false)
+
+  const settingsStore = useSettingsStore()
+  const { groupDailyFetchCount } = storeToRefs(settingsStore)
+
+  // persist daily fetch counters so the app remembers how many groups were fetched today
+  const dailyFetchCount = useStorage<number>('group_daily_fetch_count', 0)
+  const dailyFetchDay = useStorage<string>('group_daily_fetch_day', '')
+
+  function getTodayStr() {
+    return new Date().toISOString().slice(0, 10)
+  }
+
+  function resetDailyIfNeeded() {
+    const today = getTodayStr()
+    if (dailyFetchDay.value !== today) {
+      dailyFetchDay.value = today
+      dailyFetchCount.value = 0
+    }
+  }
+
   async function load(options?: SearchChatFinderOptions) {
     const result = await ChatFinderRepository.paginate(options)
     total.value = result.total
     chats.value = result.data
   }
 
+  // ensure daily counter is valid on startup
+  resetDailyIfNeeded()
   load()
   async function getChatFromLink(url: string): Promise<ChatFinder | undefined> {
     if (blockTime.value > 0) {
@@ -63,8 +86,10 @@ export const useChatFinderStore = defineStore('chat-finder', () => {
             createTime: Date.now(),
           }
           if (!chat.id) {
-            chat.id = chatRes.chat_id
+            // some TDLib responses may include `chat_id` — access defensively to avoid TS errors
+            chat.id = (chatRes as any).chat_id
           }
+          // attempt to add - add will enforce daily limit
           await add(chat)
         }
       }
@@ -125,9 +150,32 @@ export const useChatFinderStore = defineStore('chat-finder', () => {
   }, 3000)
 
   async function add(chat: ChatFinder) {
+    // reset daily counter if date has rolled
+    resetDailyIfNeeded()
+
+    // if groupDailyFetchCount is > 0, enforce the daily limit
+    if (groupDailyFetchCount.value > 0 && dailyFetchCount.value >= groupDailyFetchCount.value) {
+      consola.warn(`达到每日群组采集上限: ${dailyFetchCount.value}/${groupDailyFetchCount.value}`)
+      return
+    }
+
     await ChatFinderRepository.save(chat)
+
+    // increment daily counter after successful save
+    dailyFetchCount.value = (dailyFetchCount.value || 0) + 1
+
+    // reload list
     load()
   }
 
-  return { chats, add, total, enable, load, blockSeconds, parseFromMessage }
+  const remainingToday = () => {
+    resetDailyIfNeeded()
+    if (groupDailyFetchCount.value <= 0) {
+      return Infinity
+    }
+
+    return Math.max(0, groupDailyFetchCount.value - (dailyFetchCount.value || 0))
+  }
+
+  return { chats, add, total, enable, load, blockSeconds, parseFromMessage, dailyFetchCount, dailyFetchDay, remainingToday }
 })
