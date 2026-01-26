@@ -30,6 +30,7 @@ const router = createRouter({
             tab: true,
           },
         },
+
         {
           path: '/message',
           name: 'message',
@@ -47,6 +48,26 @@ const router = createRouter({
           meta: {
             title: 'chatFinder.title',
             icon: 'users',
+            tab: true,
+          },
+        },
+        {
+          path: '/sticker',
+          name: 'Sticker',
+          component: () => import('../views/sticker/StickerView.vue'),
+          meta: {
+            title: '表情采集',
+            icon: 'smile',
+            tab: true,
+          },
+        },
+        {
+          path: '/editor',
+          name: 'Editor',
+          component: () => import('../views/editor/EditorView.vue'),
+          meta: {
+            title: '消息编辑器',
+            icon: 'edit',
             tab: true,
           },
         },

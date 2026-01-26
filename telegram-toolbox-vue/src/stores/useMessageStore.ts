@@ -1,9 +1,8 @@
-import type { Message } from '../tdlib-types'
+import type { FormattedText, Message } from '../tdlib-types'
 import type { MessageListen } from '@/data/MessageListen.ts'
 import { useStorage } from '@vueuse/core'
 import consola from 'consola'
 import dayjs from 'dayjs'
-import { ElMessage } from 'element-plus'
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -11,6 +10,7 @@ import { useI18n } from 'vue-i18n'
 import Alert from '@/assets/alert.wav'
 import { matchListens } from '@/data/MessageListen.ts'
 import { useChatFinderStore } from '@/stores/useChatFinderStore.ts'
+import { useStickerStore } from '@/stores/useStickerStore.ts'
 import { useTDStore } from '@/stores/useTDStore.ts'
 import { MessageUtils } from '@/utils/MessageUtils.ts'
 import { TelegramUtils } from '@/utils/TelegramUtils.ts'
@@ -118,6 +118,25 @@ export const useMessageStore = defineStore('message-store', () => {
     }
   }
 
+  async function sendTextMessage(text: string, chatId: number) {
+    const formattedText = await tdStore.invoke<FormattedText>(({
+      _: 'parseMarkdown',
+      text: {
+        _: 'formattedText',
+        text,
+      },
+    }))
+    const msg = await tdStore.invoke<Message>({
+      _: 'sendMessage',
+      chat_id: chatId,
+      input_message_content: {
+        _: 'inputMessageText',
+        text: formattedText,
+      },
+    })
+    return msg
+  }
+
   async function add(msg: Message) {
     if (alertMessageId.includes(msg.id)) {
       return
@@ -192,5 +211,5 @@ export const useMessageStore = defineStore('message-store', () => {
     }
   }
 
-  return { messages, listenList, add, clear, removeMsg, excludeChats, addListen, removeListen, listenMessage }
+  return { messages, listenList, add, clear, removeMsg, sendTextMessage, excludeChats, addListen, removeListen, listenMessage }
 })

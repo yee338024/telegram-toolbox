@@ -71,6 +71,7 @@ export class TDWebsocket {
   }
 
   async invoke(params: any) {
+
     if (!this.client) { throw new Error('Client not initialized') }
     return this.client.invoke(params)
   }

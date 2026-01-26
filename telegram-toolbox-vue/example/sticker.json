@@ -1,0 +1,74 @@
+{
+  "_": "sticker",
+  "id": "5098317375116149985",
+  "set_id": "7361242902141337132",
+  "width": 512,
+  "height": 512,
+  "emoji": "📱",
+  "format": {
+    "_": "stickerFormatWebm"
+  },
+  "full_type": {
+    "_": "stickerFullTypeCustomEmoji",
+    "custom_emoji_id": "5098317375116149985",
+    "needs_repainting": false
+  },
+  "thumbnail": {
+    "_": "thumbnail",
+    "format": {
+      "_": "thumbnailFormatWebp"
+    },
+    "width": 100,
+    "height": 100,
+    "file": {
+      "_": "file",
+      "id": 7366,
+      "size": 2660,
+      "expected_size": 2660,
+      "local": {
+        "_": "localFile",
+        "path": "",
+        "can_be_downloaded": true,
+        "can_be_deleted": false,
+        "is_downloading_active": false,
+        "is_downloading_completed": false,
+        "download_offset": 0,
+        "downloaded_prefix_size": 0,
+        "downloaded_size": 0
+      },
+      "remote": {
+        "_": "remoteFile",
+        "id": "AAMCAQADFQABaXYSpyEgW5-RVt0Tpbc0GlLELyUAAuEEAAKk3MBGIiBXHRZkczgBAAdtAAM2BA",
+        "unique_id": "AQAD4QQAAqTcwEZy",
+        "is_uploading_active": false,
+        "is_uploading_completed": true,
+        "uploaded_size": 2660
+      }
+    }
+  },
+  "sticker": {
+    "_": "file",
+    "id": 7365,
+    "size": 59560,
+    "expected_size": 59560,
+    "local": {
+      "_": "localFile",
+      "path": "",
+      "can_be_downloaded": true,
+      "can_be_deleted": false,
+      "is_downloading_active": false,
+      "is_downloading_completed": false,
+      "download_offset": 0,
+      "downloaded_prefix_size": 0,
+      "downloaded_size": 0
+    },
+    "remote": {
+      "_": "remoteFile",
+      "id": "CAACAgEAAxUAAWl2EqchIFufkVbdE6W3NBpSxC8lAALhBAACpNzARiIgVx0WZHM4NgQ",
+      "unique_id": "AgAD4QQAAqTcwEY",
+      "is_uploading_active": false,
+      "is_uploading_completed": true,
+      "uploaded_size": 59560
+    }
+  }
+}

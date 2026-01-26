@@ -8,6 +8,7 @@ import { useRouter } from 'vue-router'
 import { TelegramApi } from '@/api/TelegramApi.ts'
 import { UserRepository } from '@/data/repository/UserRepository.ts'
 import { useMessageStore } from '@/stores/useMessageStore.ts'
+import { useStickerStore } from '@/stores/useStickerStore.ts'
 
 export interface TDWebSocketEvent {
   event: 'update' | 'stop' | 'login'
@@ -49,6 +50,8 @@ export const useTDStore = defineStore('td-store', () => {
   const basicGroups = reactive<BasicGroup[]>([])
   const superGroups = reactive<Supergroup[]>([])
   const messageStore = useMessageStore()
+  const stickerStore = useStickerStore()
+
   const router = useRouter()
   TelegramApi.getTDPort().then((port) => {
     const p = port == -1 ? 6001 : port
@@ -165,7 +168,24 @@ export const useTDStore = defineStore('td-store', () => {
         else if (message.event == 'update') {
           const data = message.data as Update
           if (data._ == 'updateNewMessage') {
-            consola.info('New message received:', data.message)
+            const msg = data.message
+            if (msg.content._ == 'messageAnimatedEmoji') {
+              stickerStore.addSticker(msg.content.animated_emoji.sticker).catch()
+            }
+            else if (msg.content._ == 'messageText') {
+              for (const entity of msg.content.text.entities) {
+                if (entity.type._ == 'textEntityTypeCustomEmoji') {
+                  stickerStore.addStickerByEmojiId([entity.type.custom_emoji_id]).catch()
+                }
+              }
+            }
+            else if (msg.content._ == 'messageVideo' || msg.content._ == 'messagePhoto') {
+              for (const entity of msg.content.caption.entities) {
+                if (entity.type._ == 'textEntityTypeCustomEmoji') {
+                  stickerStore.addStickerByEmojiId([entity.type.custom_emoji_id]).catch()
+                }
+              }
+            }
             messageStore.add(data.message)
           }
         }

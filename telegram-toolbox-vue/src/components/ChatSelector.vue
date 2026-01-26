@@ -1,18 +1,19 @@
 <script setup lang="ts">
-import {useTDStore} from "@/stores/useTDStore.ts";
+import type { Chat } from '@/tdlib-types'
 import { useI18n } from 'vue-i18n'
-import {Chat} from "@/tdlib-types";
+import { useTDStore } from '@/stores/useTDStore.ts'
+
 const props = defineProps({
-  hasPermission:{
-    type:Boolean,
-    default:false
-  }
+  hasPermission: {
+    type: Boolean,
+    default: false,
+  },
 })
 const model = defineModel<number[]>()
 const tdStore = useTDStore()
 const { t } = useI18n()
 
-function isDisabled(chat:Chat):boolean {
+function isDisabled(chat: Chat): boolean {
   if (props.hasPermission) {
     if (chat.permissions.can_send_basic_messages == false) {
       return true
@@ -21,8 +22,8 @@ function isDisabled(chat:Chat):boolean {
   return false
 }
 
-function onclick(){
-  if(tdStore.chats.length === 0) {
+function onclick() {
+  if (tdStore.chats.length === 0) {
     tdStore.loadChats()
   }
 }
@@ -33,9 +34,9 @@ function onclick(){
     v-model="model"
     :placeholder="t('message.selectChat')"
     multiple
-    @click="onclick"
     filterable
     style="width: 300px"
+    @click="onclick"
   >
     <el-option
       v-for="chat in tdStore.chats"
