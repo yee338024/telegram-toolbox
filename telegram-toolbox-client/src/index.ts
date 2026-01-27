@@ -3,7 +3,7 @@ import process from 'node:process'
 import {
   BroadcastChannelHandler,
   BrowserWindowChannelHandler,
-  ClipboardChannelHandler,
+  ClipboardChannelHandler, DialogChannelHandler,
   ShortcutChannelHandler,
   store,
   SystemChannelHandler,
@@ -40,6 +40,7 @@ else {
     new ShortcutChannelHandler(appContext)
     new SystemChannelHandler(appContext)
     new MyAppChannelHandler(appContext)
+    new DialogChannelHandler(appContext)
     new ClipboardChannelHandler(appContext)
     TrayManager.init(appContext)
     MainWindow.getInstance().show()

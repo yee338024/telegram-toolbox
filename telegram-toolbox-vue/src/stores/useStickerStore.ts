@@ -10,6 +10,7 @@ import { useTDStore } from '@/stores/useTDStore.ts'
 export const useStickerStore = defineStore('sticker-store', () => {
   const tdStore = useTDStore()
   const stickerSets = ref<StickerSet[]>([])
+  const addingQueue: string[] = []
   async function addStickerByEmojiId(emojiId: string[]) {
     const stickers = await tdStore.invoke<Stickers>({
       _: 'getCustomEmojiStickers',
@@ -21,36 +22,48 @@ export const useStickerStore = defineStore('sticker-store', () => {
   }
 
   async function addSticker(sticker: Sticker) {
-    const set = await tdStore.invoke<StickerSet>({
-      _: 'getStickerSet',
-      set_id: sticker.set_id,
-    })
-    consola.info('Adding sticker set', set.title)
-    await stickerSetRepository.save(set)
-    let needRefresh = false
-    for (const sticker of set.stickers) {
-      await stickerRepository.save(sticker)
-      if (!sticker.thumbnail.file.local.is_downloading_completed) {
-        needRefresh = true
-        await tdStore.invoke({
-          _: 'downloadFile',
-          file_id: sticker.thumbnail.file.id,
-          priority: 1,
-        })
-      }
+    if (addingQueue.includes(sticker.set_id)) {
+      return
     }
-    await delay(1000)
-    if (needRefresh) {
-      const refreshedSet = await tdStore.invoke<StickerSet>({
+    addingQueue.push(sticker.set_id)
+    try {
+      const set = await tdStore.invoke<StickerSet>({
         _: 'getStickerSet',
         set_id: sticker.set_id,
       })
-      await stickerSetRepository.save(refreshedSet)
+      consola.info('Adding sticker set', set.title)
+      await stickerSetRepository.save(set)
+      let needRefresh = false
       for (const sticker of set.stickers) {
         await stickerRepository.save(sticker)
+        if (!sticker.thumbnail.file.local.is_downloading_completed) {
+          needRefresh = true
+          await tdStore.invoke({
+            _: 'downloadFile',
+            file_id: sticker.thumbnail.file.id,
+            priority: 1,
+          })
+        }
       }
+      await delay(1000)
+      if (needRefresh) {
+        const refreshedSet = await tdStore.invoke<StickerSet>({
+          _: 'getStickerSet',
+          set_id: sticker.set_id,
+        })
+        await stickerSetRepository.save(refreshedSet)
+        for (const sticker of set.stickers) {
+          await stickerRepository.save(sticker)
+        }
+      }
+      await loadStickerSets()
     }
-    await loadStickerSets()
+    catch (e) {
+      throw e
+    }
+    finally {
+      addingQueue.splice(addingQueue.indexOf(sticker.set_id), 1)
+    }
   }
 
   async function loadStickerSets() {

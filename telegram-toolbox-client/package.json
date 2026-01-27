@@ -17,7 +17,7 @@
   "description": "",
   "dependencies": {
     "@widget-js/core": "24.1.1-beta.71",
-    "@widget-js/electron-common": "0.12.55",
+    "@widget-js/electron-common": "0.12.56",
     "@widget-js/web-api": "^24.1.1-beta.70",
     "about-window": "^1.15.2",
     "bytenode": "^1.5.7",

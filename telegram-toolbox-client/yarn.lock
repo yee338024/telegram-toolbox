@@ -1201,10 +1201,10 @@
     lodash "^4.17.21"
     path-normalize "^6.0.12"
 
-"@widget-js/electron-common@0.12.55":
-  version "0.12.55"
-  resolved "https://registry.yarnpkg.com/@widget-js/electron-common/-/electron-common-0.12.55.tgz#af4db281bdd8fe7ddfa8be7d6625cd53483deb9f"
-  integrity sha512-KdVMtc46qHZ/VU0dx67TDYRPx1k5oJHQHJmDSxEfPcMVtBaOvmRlFQO5Dy/a3W6qUdt/ea6Dfjs2G42IgRe2ug==
+"@widget-js/electron-common@0.12.56":
+  version "0.12.56"
+  resolved "https://registry.yarnpkg.com/@widget-js/electron-common/-/electron-common-0.12.56.tgz#7e8c2cfadd52dde352b98ed328bd5977ff0ca5b2"
+  integrity sha512-8t8QHhewhXPqYkD4FHw+Axf/lGvhYwjMA6SQgz2yjfcvDNMF/h4Qsos7RKxidQlUDZBET1DNYHKAQaKWese7bw==
   dependencies:
     "@widget-js/core" "^24.1.1-beta.72"
     axios "^1.6.0"

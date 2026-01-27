@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Chat } from '@/tdlib-types'
+import { ref, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useTDStore } from '@/stores/useTDStore.ts'
 
@@ -12,8 +13,8 @@ const props = defineProps({
 const model = defineModel<number[]>()
 const tdStore = useTDStore()
 const { t } = useI18n()
-
-function isDisabled(chat: Chat): boolean {
+const disabled = ref(false)
+async function isDisabled(chat: Chat): boolean {
   if (props.hasPermission) {
     if (chat.permissions.can_send_basic_messages == false) {
       return true
@@ -27,6 +28,11 @@ function onclick() {
     tdStore.loadChats()
   }
 }
+watchEffect(() => {
+  for (const chat of tdStore.chats) {
+    isDisabled(chat)
+  }
+})
 </script>
 
 <template>
@@ -41,7 +47,7 @@ function onclick() {
     <el-option
       v-for="chat in tdStore.chats"
       :key="chat.id"
-      :disabled="isDisabled(chat)"
+      :disabled="disabled"
       :label="chat.title"
       :value="chat.id"
     />

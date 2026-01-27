@@ -2,7 +2,6 @@
 import { asyncComputed } from '@vueuse/core'
 import { Marked } from 'marked'
 import { nextTick, ref } from 'vue'
-import FeatherIcon from '@/components/FeatherIcon.vue'
 
 const model = defineModel<string>()
 const markd = new Marked()
@@ -116,19 +115,16 @@ function onLink() {
       <div class="flex flex-col gap-2 w-full">
         <el-button-group class="w-full">
           <el-button @click="onBold">
-            <FeatherIcon name="bold" :size="12" />
+            <div class="i-icon-park-outline:text-bold" />
           </el-button>
           <el-button @click="onItalic">
-            <FeatherIcon name="italic" :size="12" />
+            <div class="i-icon-park-outline:text-italic" />
           </el-button>
           <el-button @click="onStrike">
             <div class="i-icon-park-outline:strikethrough" />
           </el-button>
           <el-button @click="onLink">
             <div class="i-icon-park-outline:link" />
-          </el-button>
-          <el-button @click="onEmoji">
-            😀
           </el-button>
         </el-button-group>
         <div class="flex gap-2 h-full" style="min-height: 200px">

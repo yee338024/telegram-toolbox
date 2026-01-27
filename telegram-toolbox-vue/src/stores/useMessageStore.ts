@@ -6,11 +6,10 @@ import dayjs from 'dayjs'
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-
 import Alert from '@/assets/alert.wav'
+
 import { matchListens } from '@/data/MessageListen.ts'
 import { useChatFinderStore } from '@/stores/useChatFinderStore.ts'
-import { useStickerStore } from '@/stores/useStickerStore.ts'
 import { useTDStore } from '@/stores/useTDStore.ts'
 import { MessageUtils } from '@/utils/MessageUtils.ts'
 import { TelegramUtils } from '@/utils/TelegramUtils.ts'
@@ -118,6 +117,49 @@ export const useMessageStore = defineStore('message-store', () => {
     }
   }
 
+  async function sendPhotoMessage(filePath: string, text: string, chatId: number) {
+    const formattedText = await tdStore.invoke<FormattedText>(({
+      _: 'parseMarkdown',
+      text: {
+        _: 'formattedText',
+        text,
+      },
+    }))
+    return await tdStore.invoke<Message>(({
+      _: 'sendMessage',
+      chat_id: chatId,
+      input_message_content: {
+        _: 'inputMessagePhoto',
+        photo: {
+          _: 'inputFileLocal',
+          path: filePath,
+        },
+        caption: formattedText,
+      },
+    }))
+  }
+
+  async function sendVideoMessage(filePath: string, text: string, chatId: number) {
+    const formattedText = await tdStore.invoke<FormattedText>(({
+      _: 'parseMarkdown',
+      text: {
+        _: 'formattedText',
+        text,
+      },
+    }))
+    return await tdStore.invoke<Message>(({
+      _: 'sendMessage',
+      chat_id: chatId,
+      input_message_content: {
+        _: 'inputMessageVideo',
+        video: {
+          _: 'inputFileLocal',
+          path: filePath,
+        },
+        caption: formattedText,
+      },
+    }))
+  }
   async function sendTextMessage(text: string, chatId: number) {
     const formattedText = await tdStore.invoke<FormattedText>(({
       _: 'parseMarkdown',
@@ -211,5 +253,5 @@ export const useMessageStore = defineStore('message-store', () => {
     }
   }
 
-  return { messages, listenList, add, clear, removeMsg, sendTextMessage, excludeChats, addListen, removeListen, listenMessage }
+  return { messages, listenList, add, clear, sendVideoMessage, sendPhotoMessage, removeMsg, sendTextMessage, excludeChats, addListen, removeListen, listenMessage }
 })
